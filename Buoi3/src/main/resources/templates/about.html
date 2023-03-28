@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" th:href="@{/about.css}">
+</head>
+<body>
+<div class="container">
+  <h1>DANH SÁCH SINH VIÊN</h1>
+  <div class="wrapper">
+    <ul class="header">
+      <li class="item">User</li>
+      <li class="item">Password</li>
+      <li class="item">Fullname</li>
+    </ul>
+    <div th:each="item : ${list}" class="content">
+      <h3 th:text="${item.getUser()}" class="item"></h3>
+      <h3 th:text="${item.getPassword()}" class="item"></h3>
+      <h3 th:text="${item.getFullname()}" class="item"></h3>
+    </div>
+  </div>
+  <a th:href="@{/view}">View</a>
+</div>
+</body>
+</html>
