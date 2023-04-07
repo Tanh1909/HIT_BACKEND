@@ -9,14 +9,14 @@ public class User {
 
     }
 
+    public String getUser() {
+        return user;
+    }
+
     public User(String user, String password, String fullname) {
         this.user = user;
         this.password = password;
         this.fullname = fullname;
-    }
-
-    public String getUser() {
-        return user;
     }
 
     public void setUser(String user) {
