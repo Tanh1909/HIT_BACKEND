@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="about.css" >
+</head>
+<body>
+<div class="container">
+  <h1>DANH SÁCH SINH VIÊN</h1>
+  <div class="wrapper">
+    <ul class="header">
+      <li class="item">UserName</li>
+      <li class="item">Password</li>
+      <li class="item">Fullname</li>
+      <li class="item">CreatedAt</li>
+      <li class="item">UpdatedAT</li>
+    </ul>
+    <div th:each="item : ${list}" class="content">
+      <h3 th:text="${item.getUserName()}" class="item"></h3>
+      <h3 th:text="${item.getPassWord()}" class="item"></h3>
+      <h3 th:text="${item.getFullName()}" class="item"></h3>
+      <h3 th:text="${item.getId()}" class="item"></h3>
+      <h3  class="item"></h3>
+      <a class="ed" th:href="@{/edit(id=${item.getId()})}" >Edit</a>
+      <a class="ed" th:href="@{/delete(id=${item.getId()})}" style="color:red ;">Delete</a>
+    </div>
+  </div>
+  <a th:href="@{/view}">View</a>
+  <a th:href="@{/sign}">Sign Up</a>
+</div>
+</body>
+</html>
